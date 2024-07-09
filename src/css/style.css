@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+:root {
+    --bgcolor: rgb(255, 255, 255);
+    --neutral-color: rgb(128, 128, 128);
+    --txtcolor: rgb(30, 30, 30);
+
+    --hover-color: rgba(128, 128, 128, .25);
+    --active-color: rgba(128, 128, 128, .45);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bgcolor: rgb(30, 30, 30);
+        --neutral-color: rgb(128, 128, 128);
+        --txtcolor: rgb(255, 255, 255);
+
+        --hover-color: rgba(0, 0, 0, .15);
+        --active-color: rgba(0, 0, 0, .3);
+    }
+    html {
+        color-scheme: dark;
+    }
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.fcontainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 25px;
+    padding: 35px;
+    border-radius: 7.5px;
+    width: 430px;
+    backdrop-filter: blur(1px);
+    background: var(--bgcolor);
+}
+
+.text-color {
+    color: var(--txtcolor);
+}
+
+.text-format {
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+    text-align: start;
+}
+
+.fcontainer:first-child h1 {
+    font-size: 24px;
+}
+
+.input-field {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.input-field input {background: transparent;
+    font-size: 14px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--txtcolor);
+}
+
+.fcontainer button {
+    border: 1px solid var(--txtcolor);
+    background: var(--bgcolor);
+    padding: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all .2s;
+}
+
+.fcontainer button:hover {
+    background: var(--hover-color);
+    cursor: pointer;
+}
+.fcontainer button:active {
+    background: var(--active-color);
+}
